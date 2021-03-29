@@ -1,6 +1,3 @@
-const CustomError = require("../extensions/custom-error");
-
-module.exports = function createDreamTeam(/* members */) {
-  throw new CustomError('Not implemented');
-  // remove line with error and write your code here
+module.exports = function createDreamTeam(players) {
+return Array.isArray(players) ? players.filter(strng => typeof (strng) ==='string').map(str => str.trim()).filter(str => str.length > 0).map(str => str[0].toUpperCase()).sort().join('') : false;
 };
